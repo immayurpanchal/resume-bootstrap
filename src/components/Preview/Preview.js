@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Preview = () => (
-    <div className="col-6">
+    <div className="col-8">
         This is preview
     </div>
 );
