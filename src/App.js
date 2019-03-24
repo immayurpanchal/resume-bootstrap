@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Topbar />
-        <div className="row">
+        <div className="row ml-1">
           <Sidebar />
           <Preview />
         </div>

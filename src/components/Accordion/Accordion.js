@@ -15,7 +15,7 @@ class Accordion extends React.Component {
     return (
       <div className="mt-2">
         <div className="accordion" id="accordionExample">
-          <div className="card">
+          <div >
             <button
               className="btn btn-primary btn-block"
               type="button"
