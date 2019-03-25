@@ -80,6 +80,7 @@ const mapDispatchToProps = dispatch => {
     newAddress: address => dispatch({ type: PERSONAL_INFO_ADDRESS, address })
   };
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
