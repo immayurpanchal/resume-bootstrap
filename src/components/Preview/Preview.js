@@ -1,9 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Preview = () => (
-    <div className="col-8">
-        This is preview
-    </div>
-);
+const Preview = () => <div> This is Preview </div>;
 
 export default Preview;

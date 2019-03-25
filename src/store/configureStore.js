@@ -1,12 +1,17 @@
 import { createStore } from "redux";
-import { PERSONAL_INFO as P_INFO } from "../actions/actions";
-import { PERSONAL_INFO } from "../constants/constants";
+import {
+  PERSONAL_INFO_NAME,
+  PERSONAL_INFO_EMAIL,
+  PERSONAL_INFO_DOB,
+  PERSONAL_INFO_ADDRESS
+} from "../constants/constants";
 
 const initialState = {
   personalInfo: {
     name: "",
     email: "",
-    dateOfBirth: ""
+    dateOfBirth: "",
+    address: ""
   },
   education: [
     {
@@ -50,12 +55,36 @@ const initialState = {
 export default () =>
   createStore((state = initialState, action) => {
     switch (action.type) {
-      case PERSONAL_INFO:
+      case PERSONAL_INFO_NAME:
         return {
+          ...state,
           personalInfo: {
-            name: "Mayur Panchal",
-            email: "immayurpanchal@gmail.com",
-            dateOfBirth: "16/05/1997"
+            ...state.personalInfo,
+            name: action.name
+          }
+        };
+      case PERSONAL_INFO_EMAIL:
+        return {
+          ...state,
+          personalInfo: {
+            ...state.personalInfo,
+            email: action.email
+          }
+        };
+      case PERSONAL_INFO_DOB:
+        return {
+          ...state,
+          personalInfo: {
+            ...state.personalInfo,
+            dateOfBirth: action.dateOfBirth
+          }
+        };
+      case PERSONAL_INFO_ADDRESS:
+        return {
+          ...state,
+          personalInfo: {
+            ...state.personalInfo,
+            address: action.address
           }
         };
       default:
