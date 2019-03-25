@@ -35,4 +35,5 @@ class Education extends React.Component {
   }
 }
 
+
 export default Education;
