@@ -8,27 +8,30 @@ import {
 } from "../../constants/constants";
 
 const Degree = props => {
+  const index = props.index;
+
   const degreeNameChange = e => {
-    props.newDegreeName(e.target.value);
+    props.newDegreeName(e.target.value, index);
+    console.log(e.target.value);
   };
 
   const cpiChange = e => {
-    props.newCpi(e.target.value);
+    props.newCpi(e.target.value, index);
   };
 
   const yearChange = e => {
-    props.newYear(e.target.value);
+    props.newYear(e.target.value, index);
   };
 
   const instituteChange = e => {
-    props.newInstitute(e.target.value);
+    props.newInstitute(e.target.value, index);
   };
 
   return (
     <div className="form-group">
       <input
         type="textbox"
-        name="props.degreeName"
+        name="degree"
         value={props.degreeName}
         placeholder="Degree Name"
         className="form-control mt-2"
@@ -36,7 +39,7 @@ const Degree = props => {
       />
       <input
         type="textbox"
-        name="props.institute"
+        name="institute"
         value={props.institute}
         placeholder="Institute / University"
         className="form-control mt-2"
@@ -44,7 +47,7 @@ const Degree = props => {
       />
       <input
         type="textbox"
-        name="props.year"
+        name="year"
         value={props.year}
         placeholder="Year"
         className="form-control mt-2"
@@ -52,33 +55,31 @@ const Degree = props => {
       />
       <input
         type="textbox"
-        name="props.cpi"
+        name="cpi"
         value={props.cpi}
         placeholder="CPI / Aggregate"
         className="form-control mt-2"
         onChange={cpiChange}
       />
+      <button>REMOVE</button>
     </div>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    cpi: state.education.cpi,
-    degreeName: state.education.degreeName,
-    year: state.education.year,
-    institute: state.education.institute
+    degreeList: state.education.cpi
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    newCpi: cpi => dispatch({ type: EDUCATION_CPI, cpi }),
-    newDegreeName: degreeName =>
-      dispatch({ type: EDUCATION_DEGREE_NAME, degreeName }),
-    newYear: year => dispatch({ type: EDUCATION_YEAR, year }),
-    newInstitute: institute =>
-      dispatch({ type: EDUCATION_INSTITUTE, institute })
+    newCpi: (cpi, index) => dispatch({ type: EDUCATION_CPI, cpi, index }),
+    newDegreeName: (degree, index) =>
+      dispatch({ type: EDUCATION_DEGREE_NAME, degree, index }),
+    newYear: (year, index) => dispatch({ type: EDUCATION_YEAR, year, index }),
+    newInstitute: (institute, index) =>
+      dispatch({ type: EDUCATION_INSTITUTE, institute, index })
   };
 };
 

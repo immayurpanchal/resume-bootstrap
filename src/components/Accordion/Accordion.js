@@ -35,7 +35,7 @@ class Accordion extends React.Component {
               data-parent="#accordionExample"
             >
               <div className="card-body">
-                <Component />
+                <Component {...this.props}/>
               </div>
             </div>
           </div>

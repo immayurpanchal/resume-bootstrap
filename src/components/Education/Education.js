@@ -1,29 +1,64 @@
 import React from "react";
+import { connect } from "react-redux";
 import Accordion from "../Accordion/Accordion";
 import Degree from "../Degree/Degree";
+import { EDUCATION_ADD_DEGREE } from "../../constants/constants";
 
 class Education extends React.Component {
   state = {
-    degreeList: []
+    accordionList: []
   };
 
-  addNewAccordion() {
-    const number = this.state.degreeList.length;
+  componentDidMount() {
     this.setState({
-      degreeList: this.state.degreeList.concat(
+      accordionList: this.props.degreeList.map((object, index) => {
+        return (
+          <Accordion
+            component={Degree}
+            key={Math.random()}
+            title={object.degree}
+            degreeName={object.degree}
+            year={object.year}
+            institute={object.institute}
+            cpi={object.cpi}
+            index={index}
+          />
+        );
+      })
+    });
+  }
+
+  componentDidUpdate() {
+    console.log("component updated");
+  }
+
+  addNewAccordion() {
+    this.props.newDegree({ degree: "", cpi: "", year: "", institute: "" });
+
+    this.setState(() => ({
+      accordionList: this.state.accordionList.concat(
         <Accordion
           component={Degree}
-          key={number}
-          title={`Degree #${number}`}
+          key={Math.random()}
+          title={`Degree #${this.state.accordionList.length}`}
+          degreeName=""
+          year=""
+          institute=""
+          cpi=""
+          index={
+            this.state.accordionList.length === 0
+              ? 0
+              : this.state.accordionList.length - 1
+          }
         />
       )
-    });
+    }));
   }
 
   render() {
     return (
       <div>
-        {this.state.degreeList}
+        {this.state.accordionList}
         <button
           className="btn btn-primary mt-2"
           onClick={this.addNewAccordion.bind(this)}
@@ -35,5 +70,19 @@ class Education extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    degreeList: state.education
+  };
+};
 
-export default Education;
+const mapDispatchToProps = dispatch => {
+  return {
+    newDegree: newDegree => dispatch({ type: EDUCATION_ADD_DEGREE, newDegree })
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Education);

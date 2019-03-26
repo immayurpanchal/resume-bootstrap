@@ -5,14 +5,7 @@ const initialState = {
     dateOfBirth: "",
     address: ""
   },
-  education: [
-    {
-      degree: "",
-      institute: "",
-      year: "",
-      cpi: 0
-    }
-  ],
+  education: [],
   skills: {
     expertise: "",
     programmingLanguages: "",
