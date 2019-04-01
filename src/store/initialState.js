@@ -33,7 +33,7 @@ const initialState = {
     }
   ],
   position: ["member of anything"],
-  achievements: ["1st rank in cs iq test"],
+  achievements: [],
   hobbies: []
 };
 
