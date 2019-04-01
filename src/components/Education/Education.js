@@ -15,7 +15,7 @@ class Education extends React.Component {
         return (
           <Accordion
             component={Degree}
-            key={Math.random()}
+            key={index}
             title={object.degree}
             degreeName={object.degree}
             year={object.year}
@@ -41,11 +41,7 @@ class Education extends React.Component {
           year=""
           institute=""
           cpi=""
-          index={
-            !this.state.accordionList.length
-              ? 0
-              : this.state.accordionList.length - 1
-          }
+          index={this.state.accordionList.length}
         />
       )
     }));

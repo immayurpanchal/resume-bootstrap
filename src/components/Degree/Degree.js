@@ -29,6 +29,7 @@ const Degree = props => {
 
   return (
     <div className="form-group" key={props.index}>
+    {console.log(degree)}
       <input
         type="textbox"
         name="degree"
