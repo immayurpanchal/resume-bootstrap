@@ -17,8 +17,8 @@ class App extends Component {
                 <Sidebar />
               </div>
             </div>
-            <div>
-              <div>
+            <div className="col-8">
+              <div className="App-height">
                 <Preview/>
               </div>
             </div>

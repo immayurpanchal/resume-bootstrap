@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import './Preview.css';
 
 const Preview = props => {
-  console.log(props);
   return (
     <div className="resume-render-wrapper">
       <div className="resume-template">
@@ -97,7 +97,7 @@ const Preview = props => {
           </tbody>
         </table>
         <div className="page-break" />
-        <table className="w-100 section">
+        {/* <table className="w-100 section">
           <tr>
             <td colSpan="3" className="section-header">
               <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
@@ -128,8 +128,8 @@ const Preview = props => {
               </td>
             </tr>
           ))}
-        </table>
-        {/*<table className="w-100 section" v-if="resume.projects.length">
+        </table> */}
+        {/* <table className="w-100 section" v-if="resume.projects.length">
           <tr>
             <td colSpan="2" className="section-header">
               <h3>PROJECTS</h3>
@@ -156,7 +156,7 @@ const Preview = props => {
               </td>
             </tr>
           ))}
-        </table>
+        </table> */}
 
         <table className="w-100 section" v-if="resume.positions.length">
           <tr>
@@ -173,7 +173,7 @@ const Preview = props => {
               </ul>
             </td>
           </tr>
-                </table> */}
+                </table> 
 
         <table className="w-100 section" v-if="resume.awards.length">
           <tbody>
