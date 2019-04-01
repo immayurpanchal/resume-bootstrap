@@ -4,7 +4,7 @@ import {
   ADD_AWARDS_ACHIEVEMENTS
 } from "../constants/constants";
 
-export default (state = initialState.hobbies, action) => {
+export default (state = initialState.achievements, action) => {
   const index = action.index;
 
   switch (action.type) {
