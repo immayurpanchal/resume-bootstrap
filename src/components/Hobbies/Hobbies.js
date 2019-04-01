@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import Accordion from "../Accordion/Accordion";
 import Hobby from "../Hobby/Hobby";
 import { ADD_HOBBIES } from "../../constants/constants";
 

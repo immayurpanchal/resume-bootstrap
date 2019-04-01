@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import Accordion from "../Accordion/Accordion";
 import Achievement from "../Achievement/Achievement";
 import { ADD_AWARDS_ACHIEVEMENTS } from "../../constants/constants";
 
