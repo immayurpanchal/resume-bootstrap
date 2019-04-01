@@ -1,11 +1,21 @@
 const initialState = {
   personalInfo: {
-    name: "",
+    name: "Mayur Panchal",
     email: "",
     dateOfBirth: "",
     address: ""
   },
-  education: [],
+  education: [{
+    degree: 'Msc', 
+    cpi: '7.8',
+    year: '2019',
+    institute: 'DAIICt'
+  }, {
+    degree: 'BCA', 
+    cpi: '9.5',
+    year: '2017',
+    institute: 'IDAR'
+  }],
   skills: {
     expertise: "",
     programmingLanguages: "",
@@ -14,12 +24,12 @@ const initialState = {
   },
   professionalExperience: [
     {
-      companyName: "",
-      description: "",
-      guide: "",
-      start: "",
-      end: "",
-      teamSize: 0
+      companyName: "Jalaram",
+      description: "Design",
+      guide: "Dinesh Panchal",
+      start: "01/01/2017",
+      end: "01/02/2017",
+      teamSize: 1
     }
   ],
   projects: [
