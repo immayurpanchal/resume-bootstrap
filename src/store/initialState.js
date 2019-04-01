@@ -35,17 +35,8 @@ const initialState = {
       teamSize: 1
     }
   ],
-  projects: [
-    {
-      companyName: "",
-      description: "",
-      guide: "",
-      start: "",
-      end: "",
-      teamSize: 0
-    }
-  ],
-  position: ["member of anything"],
+  projects: [],
+  position: [],
   achievements: [],
   hobbies: []
 };
