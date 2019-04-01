@@ -15,18 +15,16 @@ export default (state = initialState.education, action) => {
       const education = state.concat(action.newDegree);
       return [...education];
     case EDUCATION_CPI:
-      console.log(state[0]);
-      state[index].cpi += action.cpi;
+      state[index].cpi = action.cpi;
       return [...state];
     case EDUCATION_DEGREE_NAME:
-      console.log(state);
-      state[index].degree += action.degree;
+      state[index].degree = action.degree;
       return [...state];
     case EDUCATION_INSTITUTE:
-      state[index].institute += action.institute;
+      state[index].institute = action.institute;
       return [...state];
     case EDUCATION_YEAR:
-      state[index].year += action.year;
+      state[index].year = action.year;
       return [...state];
     default:
       return state;

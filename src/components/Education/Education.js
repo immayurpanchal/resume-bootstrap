@@ -28,10 +28,6 @@ class Education extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    console.log("component updated");
-  }
-
   addNewAccordion() {
     this.props.newDegree({ degree: "", cpi: "", year: "", institute: "" });
 
@@ -46,7 +42,7 @@ class Education extends React.Component {
           institute=""
           cpi=""
           index={
-            this.state.accordionList.length === 0
+            !this.state.accordionList.length
               ? 0
               : this.state.accordionList.length - 1
           }

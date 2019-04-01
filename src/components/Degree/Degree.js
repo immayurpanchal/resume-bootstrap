@@ -9,10 +9,10 @@ import {
 
 const Degree = props => {
   const index = props.index;
+  const degree = props.degreeList[index];
 
   const degreeNameChange = e => {
     props.newDegreeName(e.target.value, index);
-    console.log(e.target.value);
   };
 
   const cpiChange = e => {
@@ -32,7 +32,7 @@ const Degree = props => {
       <input
         type="textbox"
         name="degree"
-        value={props.degreeName}
+        value={degree.degree}
         placeholder="Degree Name"
         className="form-control mt-2"
         onChange={degreeNameChange}
@@ -40,7 +40,7 @@ const Degree = props => {
       <input
         type="textbox"
         name="institute"
-        value={props.institute}
+        value={degree.institute}
         placeholder="Institute / University"
         className="form-control mt-2"
         onChange={instituteChange}
@@ -48,7 +48,7 @@ const Degree = props => {
       <input
         type="textbox"
         name="year"
-        value={props.year}
+        value={degree.year}
         placeholder="Year"
         className="form-control mt-2"
         onChange={yearChange}
@@ -56,7 +56,7 @@ const Degree = props => {
       <input
         type="textbox"
         name="cpi"
-        value={props.cpi}
+        value={degree.cpi}
         placeholder="CPI / Aggregate"
         className="form-control mt-2"
         onChange={cpiChange}
@@ -68,7 +68,7 @@ const Degree = props => {
 
 const mapStateToProps = state => {
   return {
-    degreeList: state.education.cpi
+    degreeList: state.education
   };
 };
 

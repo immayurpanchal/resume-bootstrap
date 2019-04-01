@@ -1,5 +1,13 @@
 import React from "react";
 
-const Preview = () => <div> This is Preview </div>;
+const Preview = () => {
+  return (
+    <div>
+      <table>
+        <td>Tdata</td>
+      </table>
+    </div>
+  );
+};
 
 export default Preview;

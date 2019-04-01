@@ -6,12 +6,23 @@ import Preview from "./components/Preview/Preview";
 
 class App extends Component {
   render() {
+
     return (
-      <div className="App">
+      <div className="clearfix">
         <Topbar />
-        <div className="row ml-1">
-          <Sidebar />
-          <Preview />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-4">
+              <div className="App-height">
+                <Sidebar />
+              </div>
+            </div>
+            <div>
+              <div>
+                <Preview/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
