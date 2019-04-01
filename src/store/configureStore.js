@@ -2,6 +2,7 @@ import { createStore } from "redux";
 import PersonalInfoReducer from "../reducers/PersonalInfoReducer";
 import skillsReducer from "../reducers/skillsReducer";
 import EducationReducer from "../reducers/EducationReducer";
+import HobbiesReducer from "../reducers/HobbiesReducer";
 import { combineReducers } from "redux";
 
 export default () =>
@@ -9,6 +10,7 @@ export default () =>
     combineReducers({
       personalInfo: PersonalInfoReducer,
       skills: skillsReducer,
-      education: EducationReducer
+      education: EducationReducer,
+      hobbies: HobbiesReducer
     })
   );

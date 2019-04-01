@@ -34,7 +34,7 @@ const initialState = {
   ],
   position: ["member of anything"],
   achievements: ["1st rank in cs iq test"],
-  hobbies: ["chess"]
+  hobbies: []
 };
 
 export default initialState;
