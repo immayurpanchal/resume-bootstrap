@@ -25,16 +25,7 @@ const initialState = {
     toolsAndTechnologies: "",
     technicalElectives: ""
   },
-  professionalExperience: [
-    {
-      companyName: "Jalaram",
-      description: "Design",
-      guide: "Dinesh Panchal",
-      start: "01/01/2017",
-      end: "01/02/2017",
-      teamSize: 1
-    }
-  ],
+  professionalExperience: [],
   projects: [],
   position: [],
   achievements: [],

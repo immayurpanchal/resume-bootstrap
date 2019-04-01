@@ -73,7 +73,7 @@ const Project = props => {
       />
       <input
         type="textbox"
-        name="start"
+        name="end"
         value={project.end}
         placeholder="End"
         className="form-control mt-2"
