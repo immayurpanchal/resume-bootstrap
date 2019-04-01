@@ -12,14 +12,7 @@ class Achievements extends React.Component {
   componentDidMount() {
     this.setState({
       accordionList: this.props.achievementslist.map((object, index) => {
-        return (
-          <Accordion
-            component={Achievement}
-            key={index}
-            title={object.achievement}
-            index={index}
-          />
-        );
+        return <Achievement key={index} index={index} />;
       })
     });
   }

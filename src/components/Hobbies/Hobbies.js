@@ -12,20 +12,13 @@ class Hobbies extends React.Component {
   componentDidMount() {
     this.setState({
       accordionList: this.props.hobbylist.map((object, index) => {
-        return (
-          <Accordion
-            component={Hobby}
-            key={index}
-            title={object.hobby}
-            index={index}
-          />
-        );
+        return <Hobby key={index} index={index} />;
       })
     });
   }
 
   addNewAccordion() {
-    this.props.newHobby({ hobby: "" });
+    this.props.newHobby("");
 
     this.setState(() => ({
       accordionList: this.state.accordionList.concat(
