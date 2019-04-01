@@ -15,6 +15,6 @@ export default () =>
       education: EducationReducer,
       hobbies: HobbiesReducer,
       achievements: AchievementsReducer,
-      positions: PositionsReducer
+      position: PositionsReducer
     })
   );

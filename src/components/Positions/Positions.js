@@ -43,7 +43,7 @@ class Positions extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    positionslist: state.positions
+    positionslist: state.position
   };
 };
 

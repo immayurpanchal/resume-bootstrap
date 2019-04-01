@@ -28,7 +28,7 @@ const Position = props => {
 
 const mapStateToProps = state => {
   return {
-    positionList: state.positions
+    positionList: state.position
   };
 };
 
