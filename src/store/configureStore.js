@@ -4,6 +4,7 @@ import skillsReducer from "../reducers/skillsReducer";
 import EducationReducer from "../reducers/EducationReducer";
 import HobbiesReducer from "../reducers/HobbiesReducer";
 import AchievementsReducer from "../reducers/AchievementsReducer";
+import PositionsReducer from "../reducers/positionsReducer";
 import { combineReducers } from "redux";
 
 export default () =>
@@ -13,6 +14,7 @@ export default () =>
       skills: skillsReducer,
       education: EducationReducer,
       hobbies: HobbiesReducer,
-      achievements: AchievementsReducer
+      achievements: AchievementsReducer,
+      positions: PositionsReducer
     })
   );
