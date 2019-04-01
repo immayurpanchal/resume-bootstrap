@@ -16,7 +16,7 @@ const Achievement = props => {
         type="textbox"
         key={props.key}
         name="hobby"
-        value={achievement.achievement}
+        value={achievement}
         placeholder="Enter Achievement"
         className="form-control mt-2"
         onChange={achievementNameChange}
