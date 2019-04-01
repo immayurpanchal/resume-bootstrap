@@ -97,7 +97,7 @@ const Preview = props => {
           </tbody>
         </table>
         <div className="page-break" />
-        {/* <table className="w-100 section">
+        <table className="w-100 section">
           <tr>
             <td colSpan="3" className="section-header">
               <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
@@ -128,7 +128,7 @@ const Preview = props => {
               </td>
             </tr>
           ))}
-        </table> */}
+        </table>
         {/*<table className="w-100 section" v-if="resume.projects.length">
           <tr>
             <td colSpan="2" className="section-header">
