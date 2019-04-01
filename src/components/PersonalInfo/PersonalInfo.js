@@ -9,7 +9,7 @@ import {
 
 const PersonalInfo = props => {
   const nameChange = e => {
-    props.newName(e.target.value);
+    props.newName(e.target.value.toUpperCase());
   };
 
   const emailChange = e => {

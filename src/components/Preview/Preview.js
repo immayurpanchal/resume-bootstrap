@@ -14,23 +14,23 @@ const Preview = props => {
               </td>
 
               <td className="intro w-80">
-                <h1>{props.personalInfo.name}</h1>
+                <h1 className="intro-h1">{props.personalInfo.name}</h1>
                 <p>
-                  <b>
+                  <b className="table-title">
                     Dhirubhai Ambani Institute of Information and Communication
                     Technology
                   </b>
                 </p>
                 <p>
-                  <span className="w-60 inline-block">
+                  <span className="table-title">
                     <b>Email:</b> {props.personalInfo.email}
                   </span>
-                  <span className="w-40 text-right">
+                  <span className="table-title">
                     <b>DOB:</b> {props.personalInfo.dateOfBirth}
                   </span>
                 </p>
                 <p>
-                  <b>Address:</b> {props.personalInfo.address}
+                  <b className="table-title">Address:</b> {props.personalInfo.address}
                 </p>
               </td>
             </tr>
@@ -41,23 +41,23 @@ const Preview = props => {
           <tbody>
             <tr>
               <td colSpan="4" className="section-header">
-                <h3>EDUCATION</h3>
+                <h3 className="table-header">EDUCATION</h3>
               </td>
             </tr>
             <tr>
-              <th colSpan="1">Degree</th>
-              <th colSpan="1">University/Institute</th>
-              <th colSpan="1">Year</th>
-              <th colSpan="1">CPI/Aggregate</th>
+              <th colSpan="1" className="table-title">Degree</th>
+              <th colSpan="1" className="table-title">University/Institute</th>
+              <th colSpan="1" className="table-title">Year</th>
+              <th colSpan="1" className="table-title">CPI/Aggregate</th>
             </tr>
             {props.education.map((education, index) => (
               <tr key={index}>
                 <td>
-                  <b>{education.degree}</b>
+                  <b className="table-title">{education.degree}</b>
                 </td>
-                <td>{education.institute}</td>
-                <td>{education.year}</td>
-                <td>{education.cpi}</td>
+                <td className="table-details">{education.institute}</td>
+                <td className="table-details">{education.year}</td>
+                <td className="table-details">{education.cpi}</td>
               </tr>
             ))}
           </tbody>
@@ -67,32 +67,32 @@ const Preview = props => {
           <tbody>
             <tr>
               <td colSpan="2" className="section-header">
-                <h3>SKILLS</h3>
+                <h3 className="table-header">SKILLS</h3>
               </td>
             </tr>
             <tr>
               <td className="w-30">
                 <b>Expertise Area/Area(s) of Interest</b>
               </td>
-              <td className="w-70">{props.skills.expertise}</td>
+              <td className="table-details">{props.skills.expertise}</td>
             </tr>
             <tr v-if="resume.skill.programming_languages">
               <td className="w-30">
                 <b>Programming Language(s)</b>
               </td>
-              <td className="w-70">{props.skills.programmingLanguages}</td>
+              <td className="table-details">{props.skills.programmingLanguages}</td>
             </tr>
             <tr v-if="resume.skill.tools">
               <td className="w-30">
                 <b>Tools and Technologies</b>
               </td>
-              <td className="w-70">{props.skills.toolsAndTechnologies}</td>
+              <td className="table-details">{props.skills.toolsAndTechnologies}</td>
             </tr>
-            <tr v-if="resume.skill.technical_electives">
+            <tr>
               <td className="w-30">
                 <b>Technical Electives</b>
               </td>
-              <td className="w-70">{props.skills.technicalElectives}</td>
+              <td className="table-details">{props.skills.technicalElectives}</td>
             </tr>
           </tbody>
         </table>
@@ -100,7 +100,7 @@ const Preview = props => {
         {/* <table className="w-100 section">
           <tr>
             <td colSpan="3" className="section-header">
-              <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
+              <h3 className="table-header">PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
             </td>
           </tr>
           {props.professionalExperience.map(internship => (
@@ -132,7 +132,7 @@ const Preview = props => {
         {/* <table className="w-100 section" v-if="resume.projects.length">
           <tr>
             <td colSpan="2" className="section-header">
-              <h3>PROJECTS</h3>
+              <h3 className="table-header">PROJECTS</h3>
             </td>
           </tr>
           {props.projects.map(project => (
@@ -143,7 +143,7 @@ const Preview = props => {
                 </p>
                 <p>
                   {project.description}
-                  <p v-if="project.guide">
+                  <p className="table-details">
                     <i>Guide: {project.guide}</i>
                   </p>
                 </p>
@@ -161,14 +161,14 @@ const Preview = props => {
         <table className="w-100 section" v-if="resume.positions.length">
           <tr>
             <td colSpan="2" className="section-header">
-              <h3>POSITION OF RESPONSIBILITY</h3>
+              <h3 className="table-header">POSITION OF RESPONSIBILITY</h3>
             </td>
           </tr>
           <tr>
             <td valign="top">
               <ul className="list">
                 {props.position.map(position => (
-                  <li>{position}</li>
+                  <li className="table-details">{position}</li>
                 ))}
               </ul>
             </td>
@@ -179,14 +179,14 @@ const Preview = props => {
           <tbody>
             <tr>
               <td colSpan="2" className="section-header">
-                <h3>AWARDS AND ACHIEVEMENTS</h3>
+                <h3 className="table-header">AWARDS AND ACHIEVEMENTS</h3>
               </td>
             </tr>
             <tr>
               <td valign="top">
                 <ul className="list">
                   {props.achievements.map(achievement => (
-                    <li>{achievement}</li>
+                    <li className="table-details">{achievement}</li>
                   ))}
                 </ul>
               </td>
@@ -198,14 +198,14 @@ const Preview = props => {
           <tbody>
             <tr>
               <td colSpan="2" className="section-header">
-                <h3>INTERESTS AND HOBBIES</h3>
+                <h3 className="table-header">INTERESTS AND HOBBIES</h3>
               </td>
             </tr>
             <tr>
               <td valign="top">
                 <ul className="list">
                   {props.hobbies.map((hobby, index) => (
-                    <li key={index}>{hobby}</li>
+                    <li key={index} className="table-details">{hobby}</li>
                   ))}
                 </ul>
               </td>
