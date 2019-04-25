@@ -6,7 +6,6 @@ import Preview from "./components/Preview/Preview";
 
 class App extends Component {
   render() {
-
     return (
       <div className="clearfix">
         <Topbar />
@@ -19,7 +18,7 @@ class App extends Component {
             </div>
             <div className="col-8">
               <div className="App-height">
-                <Preview/>
+                <Preview />
               </div>
             </div>
           </div>

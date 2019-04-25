@@ -1,22 +1,22 @@
 const initialState = {
   personalInfo: {
-    name: "Hello",
+    name: "",
     email: "",
     dateOfBirth: "",
     address: ""
   },
   education: [
     {
-      degree: "Msc",
-      cpi: "7.8",
-      year: "2019",
-      institute: "DAIICt"
+      degree: "",
+      cpi: "",
+      year: "",
+      institute: ""
     },
     {
-      degree: "BCA",
-      cpi: "9.5",
-      year: "2017",
-      institute: "IDAR"
+      degree: "",
+      cpi: "",
+      year: "",
+      institute: ""
     }
   ],
   skills: {

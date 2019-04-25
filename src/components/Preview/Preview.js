@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import './Preview.css';
+import "./Preview.css";
 
 const Preview = props => {
   return (
@@ -10,7 +10,7 @@ const Preview = props => {
           <tbody>
             <tr>
               <td className="w-20">
-                <img src="../assets/daiict-logo.jpg" alt="daiict-logo" />
+                <img src="../../assets/daiict-logo.jpg" alt="daiict-logo" />
               </td>
 
               <td className="intro w-80">
@@ -30,7 +30,8 @@ const Preview = props => {
                   </span>
                 </p>
                 <p>
-                  <b className="table-title">Address:</b> {props.personalInfo.address}
+                  <b className="table-title">Address:</b>{" "}
+                  {props.personalInfo.address}
                 </p>
               </td>
             </tr>
@@ -45,10 +46,18 @@ const Preview = props => {
               </td>
             </tr>
             <tr>
-              <th colSpan="1" className="table-title">Degree</th>
-              <th colSpan="1" className="table-title">University/Institute</th>
-              <th colSpan="1" className="table-title">Year</th>
-              <th colSpan="1" className="table-title">CPI/Aggregate</th>
+              <th colSpan="1" className="table-title">
+                Degree
+              </th>
+              <th colSpan="1" className="table-title">
+                University/Institute
+              </th>
+              <th colSpan="1" className="table-title">
+                Year
+              </th>
+              <th colSpan="1" className="table-title">
+                CPI/Aggregate
+              </th>
             </tr>
             {props.education.map((education, index) => (
               <tr key={index}>
@@ -80,27 +89,35 @@ const Preview = props => {
               <td className="w-30">
                 <b>Programming Language(s)</b>
               </td>
-              <td className="table-details">{props.skills.programmingLanguages}</td>
+              <td className="table-details">
+                {props.skills.programmingLanguages}
+              </td>
             </tr>
             <tr v-if="resume.skill.tools">
               <td className="w-30">
                 <b>Tools and Technologies</b>
               </td>
-              <td className="table-details">{props.skills.toolsAndTechnologies}</td>
+              <td className="table-details">
+                {props.skills.toolsAndTechnologies}
+              </td>
             </tr>
             <tr>
               <td className="w-30">
                 <b>Technical Electives</b>
               </td>
-              <td className="table-details">{props.skills.technicalElectives}</td>
+              <td className="table-details">
+                {props.skills.technicalElectives}
+              </td>
             </tr>
           </tbody>
         </table>
         <div className="page-break" />
-        {/* <table className="w-100 section">
+        <table className="w-100 section">
           <tr>
             <td colSpan="3" className="section-header">
-              <h3 className="table-header">PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
+              <h3 className="table-header">
+                PROFESSIONAL EXPERIENCE/INTERNSHIPS
+              </h3>
             </td>
           </tr>
           {props.professionalExperience.map(internship => (
@@ -128,8 +145,8 @@ const Preview = props => {
               </td>
             </tr>
           ))}
-        </table> */}
-        {/* <table className="w-100 section" v-if="resume.projects.length">
+        </table>
+        <table className="w-100 section">
           <tr>
             <td colSpan="2" className="section-header">
               <h3 className="table-header">PROJECTS</h3>
@@ -156,7 +173,7 @@ const Preview = props => {
               </td>
             </tr>
           ))}
-        </table> */}
+        </table>
 
         <table className="w-100 section" v-if="resume.positions.length">
           <tr>
@@ -173,7 +190,7 @@ const Preview = props => {
               </ul>
             </td>
           </tr>
-                </table> 
+        </table>
 
         <table className="w-100 section" v-if="resume.awards.length">
           <tbody>
@@ -205,7 +222,9 @@ const Preview = props => {
               <td valign="top">
                 <ul className="list">
                   {props.hobbies.map((hobby, index) => (
-                    <li key={index} className="table-details">{hobby}</li>
+                    <li key={index} className="table-details">
+                      {hobby}
+                    </li>
                   ))}
                 </ul>
               </td>
