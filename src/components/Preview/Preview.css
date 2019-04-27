@@ -133,6 +133,11 @@
     margin-bottom: 10px;
   }
   
+  .clg-title {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
   @media only screen and (min-device-width: 1000px) {
     .resume-render-wrapper {
       display: block;

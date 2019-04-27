@@ -14,9 +14,8 @@ const Hobby = props => {
     <div className="form-group" key={props.key}>
       <input
         type="textbox"
-        key={props.key}
         name="hobby"
-        value={hobby}
+        value={hobby || ''}
         placeholder="Hobby Name"
         className="form-control mt-2"
         onChange={hobbyNameChange}

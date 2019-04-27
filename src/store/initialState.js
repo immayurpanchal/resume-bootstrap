@@ -1,24 +1,11 @@
-const initialState = {
+const emptyInitialState = {
   personalInfo: {
     name: "",
     email: "",
     dateOfBirth: "",
     address: ""
   },
-  education: [
-    {
-      degree: "",
-      cpi: "",
-      year: "",
-      institute: ""
-    },
-    {
-      degree: "",
-      cpi: "",
-      year: "",
-      institute: ""
-    }
-  ],
+  education: [],
   skills: {
     expertise: "",
     programmingLanguages: "",
@@ -32,4 +19,4 @@ const initialState = {
   hobbies: []
 };
 
-export default initialState;
+export default emptyInitialState;

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./Preview.css";
+import daiictLogoSrc from "../../assets/daiict-logo.jpg";
 
 const Preview = props => {
   return (
@@ -10,17 +11,15 @@ const Preview = props => {
           <tbody>
             <tr>
               <td className="w-20">
-                <img src="../../assets/daiict-logo.jpg" alt="daiict-logo" />
+                <img src={daiictLogoSrc} alt="daiict-logo" />
               </td>
 
               <td className="intro w-80">
                 <h1 className="intro-h1">{props.personalInfo.name}</h1>
-                <p>
-                  <b className="table-title">
+                  <h3 className="clg-title">
                     Dhirubhai Ambani Institute of Information and Communication
                     Technology
-                  </b>
-                </p>
+                  </h3>
                 <p>
                   <span className="table-title">
                     <b>Email:</b> {props.personalInfo.email}
@@ -30,7 +29,7 @@ const Preview = props => {
                   </span>
                 </p>
                 <p>
-                  <b className="table-title">Address:</b>{" "}
+                  <b className="table-title">Address:</b>
                   {props.personalInfo.address}
                 </p>
               </td>
@@ -38,7 +37,7 @@ const Preview = props => {
           </tbody>
         </table>
 
-        <table className="w-100 section" v-if="resume.degrees.length">
+        <table className="w-100 section">
           <tbody>
             <tr>
               <td colSpan="4" className="section-header">
@@ -85,7 +84,7 @@ const Preview = props => {
               </td>
               <td className="table-details">{props.skills.expertise}</td>
             </tr>
-            <tr v-if="resume.skill.programming_languages">
+            <tr>
               <td className="w-30">
                 <b>Programming Language(s)</b>
               </td>
@@ -93,7 +92,7 @@ const Preview = props => {
                 {props.skills.programmingLanguages}
               </td>
             </tr>
-            <tr v-if="resume.skill.tools">
+            <tr>
               <td className="w-30">
                 <b>Tools and Technologies</b>
               </td>
@@ -113,86 +112,90 @@ const Preview = props => {
         </table>
         <div className="page-break" />
         <table className="w-100 section">
-          <tr>
-            <td colSpan="3" className="section-header">
-              <h3 className="table-header">
-                PROFESSIONAL EXPERIENCE/INTERNSHIPS
-              </h3>
-            </td>
-          </tr>
-          {props.professionalExperience.map(internship => (
+          <tbody>
             <tr>
-              <td className="w-20" valign="top">
-                <p>
-                  <b>{internship.companyName}</b>
-                </p>
-              </td>
-              <td className="w-60" valign="top">
-                <p>
-                  {internship.description}
-                  <p v-if="internship.guide">
-                    <i>Guide: {internship.guide}</i>
-                  </p>
-                </p>
-              </td>
-              <td className="w-20" valign="top">
-                <p>
-                  ({internship.start} - {internship.end})
-                </p>
-                <p v-show="internship.team_size">
-                  Team Size - {internship.teamSize}
-                </p>
+              <td colSpan="3" className="section-header">
+                <h3 className="table-header">
+                  PROFESSIONAL EXPERIENCE/INTERNSHIPS
+                </h3>
               </td>
             </tr>
-          ))}
+            {props.professionalExperience.map((internship, index) => (
+              <tr key={index}>
+                <td className="w-20" valign="top">
+                  <p>
+                    <b>{internship.companyName}</b>
+                  </p>
+                </td>
+                <td className="w-60" valign="top">
+                  {internship.description}
+                  <p>
+                    <i>Guide: {internship.guide}</i>
+                  </p>
+                </td>
+                <td className="w-20" valign="top">
+                  <p>
+                    ({internship.start} - {internship.end})
+                  </p>
+                  <p v-show="internship.team_size">
+                    Team Size - {internship.teamSize}
+                  </p>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
         <table className="w-100 section">
-          <tr>
-            <td colSpan="2" className="section-header">
-              <h3 className="table-header">PROJECTS</h3>
-            </td>
-          </tr>
-          {props.projects.map(project => (
+          <tbody>
             <tr>
-              <td className="w-80" valign="top">
-                <p>
-                  <b>{project.companyName}</b>
-                </p>
-                <p>
+              <td colSpan="2" className="section-header">
+                <h3 className="table-header">PROJECTS</h3>
+              </td>
+            </tr>
+            {props.projects.map((project, index) => (
+              <tr key={index}>
+                <td className="w-80" valign="top">
+                  <p>
+                    <b>{project.companyName}</b>
+                  </p>
                   {project.description}
                   <p className="table-details">
                     <i>Guide: {project.guide}</i>
                   </p>
-                </p>
-              </td>
-              <td className="w-20" valign="top">
-                <p>
-                  ({project.start} - {project.end})
-                </p>
-                <p v-show="project.team_size">Team Size - {project.teamSize}</p>
+                </td>
+                <td className="w-20" valign="top">
+                  <p>
+                    ({project.start} - {project.end})
+                  </p>
+                  <p>Team Size - {project.teamSize}</p>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <table className="w-100 section">
+          <tbody>
+            <tr>
+              <td colSpan="2" className="section-header">
+                <h3 className="table-header">POSITION OF RESPONSIBILITY</h3>
               </td>
             </tr>
-          ))}
+            <tr>
+              <td valign="top">
+                <ul className="list">
+                  {props.position.map((position, index) => (
+                    <li className="table-details" key={index}>
+                      {position}
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          </tbody>
         </table>
 
-        <table className="w-100 section" v-if="resume.positions.length">
-          <tr>
-            <td colSpan="2" className="section-header">
-              <h3 className="table-header">POSITION OF RESPONSIBILITY</h3>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top">
-              <ul className="list">
-                {props.position.map(position => (
-                  <li className="table-details">{position}</li>
-                ))}
-              </ul>
-            </td>
-          </tr>
-        </table>
-
-        <table className="w-100 section" v-if="resume.awards.length">
+        <table className="w-100 section">
           <tbody>
             <tr>
               <td colSpan="2" className="section-header">
@@ -202,8 +205,10 @@ const Preview = props => {
             <tr>
               <td valign="top">
                 <ul className="list">
-                  {props.achievements.map(achievement => (
-                    <li className="table-details">{achievement}</li>
+                  {props.achievements.map((achievement, index) => (
+                    <li className="table-details" key={index}>
+                      {achievement}
+                    </li>
                   ))}
                 </ul>
               </td>
