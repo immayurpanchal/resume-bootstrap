@@ -39,7 +39,6 @@ const ProfessionalExperience = props => {
 
   return (
     <div className="form-group" key={props.index}>
-      {console.log(professionalExperience)}
       <input
         type="textbox"
         name="ProfessionalExperience"

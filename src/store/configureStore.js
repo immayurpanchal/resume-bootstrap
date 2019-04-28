@@ -9,8 +9,8 @@ import ProjectsReducer from "../reducers/ProjectsReducer";
 import professionalExperienceReducer from "../reducers/professionalExperienceReducer";
 import { combineReducers } from "redux";
 
-export default () =>
-  createStore(
+export default initialState => {
+  return createStore(
     combineReducers({
       personalInfo: PersonalInfoReducer,
       skills: skillsReducer,
@@ -20,5 +20,7 @@ export default () =>
       position: PositionsReducer,
       projects: ProjectsReducer,
       professionalExperience: professionalExperienceReducer
-    })
+    }),
+    initialState
   );
+};
