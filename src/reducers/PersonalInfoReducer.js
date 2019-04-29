@@ -7,7 +7,6 @@ import {
 } from "../constants/constants";
 
 export default (state = initialState.personalInfo, action) => {
-  console.log(state);
   switch (action.type) {
     case PERSONAL_INFO_NAME:
       return {
