@@ -13,7 +13,6 @@
 
 # misc
 /src/components/Etc
-/src/firebase
 .vscode
 .DS_Store
 .env.local
